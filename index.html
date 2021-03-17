@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Conversor Numérico</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
+    <link rel="icon" href="https://images.vexels.com/media/users/3/205996/isolated/preview/81d3f60bca6d3b2cbef6ba1ff1e0b4f7-desenho-de-calculadora-fofo-by-vexels.png">
+
+</head>
+
+<body>
+    <div class="div-completa">
+        <h1>CONVERSOR NUMÉRICO</h1>
+        <label class="label_decimal">DECIMAL</label>
+        <br>
+        <input type="number" id="id_numero">
+        <br>
+        <label class="label_decimal">PARA QUAL SISTEMA DESEJA CONVERTER?</label>
+        <br>
+        <br>
+        <button onclick="converter_binario()" class="btn_converter">BINÁRIO</button>
+        <button onclick="converter_hexadecimal()" class="btn_converter">HEXADECIMAL</button>
+        <button onclick="converter_octal()" class="btn_converter">OCTAL</button>
+        <button onclick="converter()" class="btn_converterT">CONVERTER EM TODOS OS SISTEMAS</button>
+        <br>
+        <br>
+    </div>'
+    <div id="resultado" class="resultado_conversao"></div>
+
+
+</body>
+
+</html>
+<script>
+    function converter_binario() {
+
+        var deci = Number(id_numero.value);
+        resultado.innerHTML = `BINÁRIO: ${deci.toString(2)}`;
+    }
+
+    function converter_octal() {
+        var deci = Number(id_numero.value);
+
+        resultado.innerHTML = `OCTAL: ${deci.toString(8)}`;
+    }
+
+    function converter_hexadecimal() {
+        var deci = Number(id_numero.value);
+
+        resultado.innerHTML = `HEXADECIMAL: ${deci.toString(16).toUpperCase()}`;
+    }
+
+    function converter() {
+
+        var deci = Number(id_numero.value);
+
+        resultado.innerHTML = `BINÁRIO<br>  ${deci.toString(2)}<br><br>`;
+        resultado.innerHTML += `OCTAL<br>  ${deci.toString(8)}<br><br>`;
+        resultado.innerHTML += `HEXADECIMAL<br>  ${deci.toString(16).toUpperCase()}`;
+    }
+</script>
